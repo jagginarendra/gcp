@@ -8,6 +8,18 @@ docker build -t gcp-app-image .
 docker tag gcp-app-image gcr.io/secondproject-275119/gcp-app-image:v1
 docker push gcr.io/secondproject-275119/gcp-app-image:v1
 
+script for above to automate
+````
+cd /home/jagginarendra/gcp
+git pull
+./gradlew build
+echo 'jar build done'
+docker build -t gcp-app-image
+TAG=$1
+docker tag gcp-app-image gcr.io/secondproject-275119/gcp-app-image:$TAG
+docker push gcr.io/secondproject-275119/gcp-app-image:$TAG
+````
+
 to start a pod in cluster 
 kubectl run --generator=run-pod/v1 gcp-spring-app --image=gcr.io/secondproject-275119/gcp-app-image:v1 --port=9080
 
