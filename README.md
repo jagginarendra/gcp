@@ -1,4 +1,4 @@
-#GCP with rolling restart of pods
+# GCP with rolling restart of pods
 
 gcloud container clusters get-credentials <cluster-name> --zone <zone-info>
 
@@ -15,18 +15,18 @@ kubectl get pods - to list pods
 kubectl get services 
 kubectl get deployments
 
-##create a load balancer to access deployments
+## create a load balancer to access deployments
 kubectl expose deployment gcp-spring-app --type=LoadBalancer
 
 using loadbalancer's external IP, we can access the deployed app
 
-##scale the deployment
+## scale the deployment
 kubectl scale deployment gcp-spring-app --replicas=4
 
-##To generate the yml in correct format
+## To generate the yml in correct format
 https://static.brandonpotter.com/kubernetes/DeploymentBuilder.html
 
-##To Deploy latest code 
+## To Deploy latest code 
 push the code , build docker image with latest code and apply latest tag 
 and update in deployment.yml as below with deployment startegy as given below.
 Here we have also configured the health check url.
