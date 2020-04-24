@@ -37,7 +37,7 @@ class MyController{
 
 	@GetMapping("/test")
 	public String getMessage(){
-		return "Hello World V3";
+		return "Hello World with health check";
 	}
 
 }
