@@ -33,7 +33,7 @@ Here we have also configured the health check url.
 
 Use the deployment.yml
 kubectl apply - f deployment.yml
-
+```
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -62,3 +62,4 @@ spec:
             initialDelaySeconds: 2
             periodSeconds: 1
             successThreshold: 5
+```
